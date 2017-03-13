@@ -1,0 +1,22 @@
+h4.text-center Teachers List
+.table-wrapper
+  br
+    .row
+      .col-md-12
+        .pull-right
+          = link_to 'Add new Teacher', new_teacher_path,  class: 'btn btn-default new_link'
+    .table-responsive
+      table.table.table-bordered.table-striped#bootstrap-table
+        thead
+          tr
+            th ID
+            th  Name
+            th UPDATED ON
+            th UPDATED BY
+
+        tbody
+          - @teachers.each do |teacher|
+              tr
+                td = teacher.id
+                td = teacher.name
+                td = teacher.updated_at
